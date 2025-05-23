@@ -1,5 +1,9 @@
 >[!NOTE]
->versionéis 1.0
+>versionéis 1.1
+
+
+>[!IMPORTANT]
+> Se agregarón métodos contemplmando un mal funcionamiento de las clases, así mismo, se editó el diagrama UML en función a las correcciones implementadas
 
 
 # POO-2SEM
