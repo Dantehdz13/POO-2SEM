@@ -3,7 +3,7 @@
 
 
 >[!IMPORTANT]
-> Se agregarón métodos contemplmando un mal funcionamiento de las clases, así mismo, se editó el diagrama UML en función a las correcciones implementadas
+> Se agregarón métodos contemplando un mal funcionamiento de las clases, así mismo, se editó el diagrama UML en función a las correcciones implementadas
 
 
 # POO-2SEM
