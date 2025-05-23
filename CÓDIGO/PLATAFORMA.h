@@ -20,7 +20,7 @@ using namespace std;
 class plataforma{
 
     //Atributos generales de los videos
-    protected:
+    private:
         int todosvideos;
 
     //------------------------------------------------------------------------
@@ -49,5 +49,12 @@ class plataforma{
 
         };
     
+        void errorFunctionn(){
+
+        };
+        //GETTERS PARA LOS ATRIBUTOS PRIVADOS........................
+        int getTodosVideos(){
+            return todosvideos;
+        }
     };
 #endif 

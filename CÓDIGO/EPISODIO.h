@@ -18,9 +18,9 @@ adentrarse en detalles más específicos de la serie
 using namespace std;
 //----------------------------------------------------------------------------
 //inicio de clase "episoidio.h"
-class serie{
+class serie : public serie{
 
-    protected:
+    private:
         string titulo;
         int ubiTemporada;
 
@@ -45,6 +45,19 @@ class serie{
         void showInfo(){
 
         };
+
+        void errorFunctionn(){
+
+        };
+
+        //GETTERS PARA ACCEDER A LOS ATRIBUTOS PRIVADOS:.......................
+        string getTitulo(){
+            return titulo;
+        }
+
+        int getUbiTemporada(){
+            return ubiTemporada;
+        }
 
 };
 

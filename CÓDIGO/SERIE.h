@@ -16,9 +16,9 @@ de episodios y de temporadas, junto con la información correspondiente.
 using namespace std;
 //----------------------------------------------------------------------------
 //inicio de clase "serie.h"
-class serie{
-
-    protected:
+class serie : public video{
+    //Atributos en privado por los modificadores de acceso
+    private:
         int numEpisodios;
         int temporadas;
 
@@ -36,13 +36,43 @@ class serie{
         }
 
         //MÉTODOS.......................................
+
+        /*
+        Este método se mantiene como float, en caso de que se busque heredar
+        a la clase EPISODIO...
+        */
         float califGeneral(){
-
+            float clasifGen=showClasificacion();
+            cout<<"Esta serie recibe una clasificación en base a los usuarios"
+            "de: "<<endl;
+            return clasifGen;
         };
 
-        void showInfo(){
-
+        //Se sobrescribe de la clase VIDEO (aunque realmente no tiene
+        //información)
+        void showInfo() override{
+            cout <<"Serie: "<<nombre<<endl;
+            cout<<"Duracion: "<<duracion<<endl;
+            cout<<"Pertenece al género "<<genero<<endl;
         };
+
+        //SOBRECARGA: misma explicación que en la clase PELICULA
+        void errorFunctionn(){
+            cout<<"Se ha producido un error..."<<endl;
+        };
+        void errorFunctionn(int numError){
+            cout<<"número de error: "<<numError<<endl;
+        };
+
+        //GETTERS...................................
+        int getNumEpisodios(){
+            return numEpisodios;
+        }
+
+        int getTemporadas(){
+            return temporadas;
+        }
+
 
 };
 

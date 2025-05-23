@@ -25,17 +25,19 @@ class video{
         string nombre;
         float duracion;
         string genero;
+        int numError;
 
     //------------------------------------------------------------------------
     //Métodos, constructores, getters y setters en público
     public:
 
         //constructor parametrizado
-        video(int id, string nombre, float duracion, string genero){
+        video(int id, string nombre, float duracion, string genero, int numError){
             id=id;
             nombre=nombre;
             duracion=duracion;
             genero=genero;
+            numError=numError;
         }
         //constructor por defecto
         video(){
@@ -43,14 +45,26 @@ class video{
             nombre="";
             duracion=0;
             genero="";
+            numError=0;
         }
 
         //MÉTODOS .........................................
-        void showInfo(){
+
+        /*
+        CORRECCIÓN: ya que como tal no tiene utilidad llenar estos métodos
+        en esta clase, porque el propósito es heredar estos a las clases SERIE
+        y PELICULA, se van a poner como métodos virtuales, para que se puedan
+        reescribir sin mayor problema en las clases mencionadas.
+        */
+        virtual void showInfo(){
 
         };
         
-        float shoeClasifiacion(){
+        virtual float showClasificacion(){
+
+        };
+        
+        virtual void errorFunctionn(){
 
         };
 
