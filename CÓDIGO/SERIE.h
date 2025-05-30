@@ -11,7 +11,7 @@ de episodios y de temporadas, junto con la información correspondiente.
 //librerías y la clase video.h
 #include <iostream>
 #include <vector>
-#include <VIDEO.h>
+#include "VIDEO.h"
 
 using namespace std;
 //----------------------------------------------------------------------------
@@ -26,14 +26,17 @@ class serie : public video{
     //Métodos, constructores, getters y setters en público
     public:
         //Ambos constructores, parametrizado y por defecto...
-        serie(int numEpisodio, int temporadas){
-            numEpisodio=numEpisodio;
-            temporadas=temporadas;
+        serie(int _numEpisodio, int _temporadas){
+            numEpisodios=_numEpisodio;
+            temporadas=_temporadas;
         }
         serie(){
             numEpisodios=0;
             temporadas=0;
         }
+        //CONSTRUCTOR PARA PARÁMETROS DE POLIMORFISMO
+        serie(string _nombre, string _genero, int _duracion, int _id):
+        video(0, _nombre,_duracion,_genero,_id){}
 
         //MÉTODOS.......................................
 
@@ -48,17 +51,24 @@ class serie : public video{
             return clasifGen;
         };
 
-        //Se sobrescribe de la clase VIDEO (aunque realmente no tiene
-        //información)
-        void showInfo() override{
-            cout <<"Serie: "<<nombre<<endl;
-            cout<<"Duracion: "<<duracion<<endl;
-            cout<<"Pertenece al género "<<genero<<endl;
+        //Se usa el concepto de polimorfismo para adaptar la información
+        //solicitada al concepto de una serie
+        void showInfo() {
+            //Se usa el método desde la clase video
+            cout <<"Nombre del programa: "<<nombre<<endl;
+            video::showInfo();
+            cout << "temporadas disponibles: "<< temporadas<<endl;
+            cout <<"Número de episodios por temporada: "<<numEpisodios<<endl;
+
+
         };
 
         //SOBRECARGA: misma explicación que en la clase PELICULA
         void errorFunctionn(){
-            cout<<"Se ha producido un error..."<<endl;
+            //Concepto de polimorfismo para adaptar los mensajes de error al
+            //contexto de las series...
+            video ::errorFunctionn();
+            cout<<"Error al cargar el episodio:"<<endl;
         };
         void errorFunctionn(int numError){
             cout<<"número de error: "<<numError<<endl;

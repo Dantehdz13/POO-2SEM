@@ -12,13 +12,13 @@ adentrarse en detalles más específicos de la serie
 //librerías y las demás clases.
 #include <iostream>
 #include <vector>
-#include <VIDEO.h>
-#include <SERIE.h>
+#include "VIDEO.h"
+#include "SERIE.h"
 
 using namespace std;
 //----------------------------------------------------------------------------
 //inicio de clase "episoidio.h"
-class serie : public serie{
+class episodio : public serie{
 
     private:
         string titulo;
@@ -28,26 +28,30 @@ class serie : public serie{
     //Métodos, constructores, getters y setters en público
     public:
         //Ambos constructores, parametrizado y por defecto...
-        serie(string titulo, int ubiTemporada){
+        episodio(string titulo, int ubiTemporada){
             titulo=titulo;
             ubiTemporada=ubiTemporada;
         }
-        serie(){
+        episodio(){
             titulo="";
             ubiTemporada=0;
         }
 
         //MÉTODOS.......................................
         float califParticular(){
-
+            return 0;
         };
 
         void showInfo(){
-
+                //Concepto de polimorfismo: se heredan y modifican atributos
+            //del método, pero ubicado en "serie"
+            showInfo();
+            cout <<"Nombre del episodio: "<<titulo<<endl;
+            cout <<"Temporada: "<<ubiTemporada<<endl;
         };
 
         void errorFunctionn(){
-
+           errorFunctionn(); 
         };
 
         //GETTERS PARA ACCEDER A LOS ATRIBUTOS PRIVADOS:.......................

@@ -11,7 +11,7 @@ Clase que hereda datos de VIDEO.h, al igual que SERIE.h.
 //importar librerías
 #include <iostream>
 #include <vector>
-#include <VIDEO.h>
+#include "VIDEO.h"
 
 using namespace std;
 //----------------------------------------------------------------------------
@@ -28,11 +28,13 @@ class pelicula : public video{
         //En este caso, heredamos los atributos protegidos de VIDEO (igual se
         //hace en la mayoría de clases)
 
-        //Sobreescribimos datos que estaban ya establecidos en VIDEO
-        void showInfo() override{
-            cout <<"Película: "<<nombre<<endl;
-            cout<<"Duracion: "<<duracion<<endl;
-            cout<<"Pertenece al género "<<genero<<endl;
+        //CONSTRUCTOR.........................................................
+        pelicula(string _nombre, string _genero, int _duracion, int _id):
+        video(0, _nombre,_duracion,_genero,_id){}
+        
+        void showInfo(){
+            cout <<"Nombre de la película: "<<nombre<<endl;
+            video::showInfo();
         };
         
         void califGeneral(){
