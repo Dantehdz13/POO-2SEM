@@ -1,10 +1,11 @@
 >[!NOTE]
->versión 1.2
+>versión 1.3
 
 
 >[!IMPORTANT]
 > Se agregarón métodos contemplando un mal funcionamiento de las clases, así mismo, se editó el diagrama UML en función a las correcciones implementadas
 >Se corrigieron problemas de herencia y se implementó polimorfismo
+>Se arrelgaron problemas relacionados a polimorfismo (constructores y llamadas a los métodos)
 
 
 # POO-2SEM
