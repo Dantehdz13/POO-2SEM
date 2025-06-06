@@ -29,8 +29,9 @@ class pelicula : public video{
         //hace en la mayoría de clases)
 
         //CONSTRUCTOR.........................................................
-        pelicula(string _nombre, string _genero, int _duracion, int _id):
-        video(0, _nombre,_duracion,_genero,_id){}
+        pelicula(string _nombre, string _genero, float _duracion, int _id):
+        video(_id, _nombre,_duracion,_genero,0){}
+
         
         void showInfo(){
             cout <<"Nombre de la película: "<<nombre<<endl;

@@ -35,8 +35,10 @@ class serie : public video{
             temporadas=0;
         }
         //CONSTRUCTOR PARA PARÁMETROS DE POLIMORFISMO
-        serie(string _nombre, string _genero, int _duracion, int _id):
-        video(0, _nombre,_duracion,_genero,_id){}
+        serie(string _nombre, string _genero, int _duracion, int _id, int _temporadas, int _numEpisodios):
+        video(_id, _nombre,_duracion,_genero,0),temporadas(_temporadas),numEpisodios(_numEpisodios){}
+
+     
 
         //MÉTODOS.......................................
 

@@ -25,14 +25,17 @@ using namespace std;
 //Creación de clase main
 int main(){
 
-    //Ejemplo de utilización del programa usando vectores
-    //(verifica si ya se corrigió el problema de herencia y demuestra el 
-    //polimorfismo)
-    video *vector[2];
+    //Se llaman ejemplos de la funcionalidad del código:
+    video* ej1=new pelicula("Los Minions","Fantasía",120.0f,1);
+    ej1->showInfo();
+    cout<<"----------SERIE---------------"<<endl;
 
-    //Primer ejemplo, película
-    vector[0]= new pelicula("Los Minions","Fantasía",120,0);
-    vector[0]->showInfo();
+    video* ej2=new serie("Breaking Bad","Suspenso",340.0f,2,10,7);
+    ej2->showInfo();
+    cout<<"-------------EPISODIO----------------"<<endl;
+
+    video* ej3=new episodio("Breaking Bad","Suspenso",340.0f,2,10,7,"Episodio1",2);
+    ej3->showInfo();
 
 
 return(0);

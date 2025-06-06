@@ -28,14 +28,18 @@ class episodio : public serie{
     //Métodos, constructores, getters y setters en público
     public:
         //Ambos constructores, parametrizado y por defecto...
-        episodio(string titulo, int ubiTemporada){
-            titulo=titulo;
-            ubiTemporada=ubiTemporada;
-        }
-        episodio(){
-            titulo="";
-            ubiTemporada=0;
-        }
+        episodio(string _nombre,string _genero,float _duracion,int _id,int _temporadas,
+                 int _numEpisodios,string _titulo,int _ubiTemporada)
+            :serie(_nombre, _genero, _duracion, _id, _temporadas, _numEpisodios),
+              titulo(_titulo),
+              ubiTemporada(_ubiTemporada){}
+
+
+        episodio():
+        serie("","",0.0f,0,0,0),
+        titulo(""),
+        ubiTemporada(0)
+        {}
 
         //MÉTODOS.......................................
         float califParticular(){
@@ -45,13 +49,13 @@ class episodio : public serie{
         void showInfo(){
                 //Concepto de polimorfismo: se heredan y modifican atributos
             //del método, pero ubicado en "serie"
-            showInfo();
+            serie::showInfo();
             cout <<"Nombre del episodio: "<<titulo<<endl;
             cout <<"Temporada: "<<ubiTemporada<<endl;
         };
 
         void errorFunctionn(){
-           errorFunctionn(); 
+           serie:errorFunctionn(); 
         };
 
         //GETTERS PARA ACCEDER A LOS ATRIBUTOS PRIVADOS:.......................
