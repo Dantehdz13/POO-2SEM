@@ -35,8 +35,10 @@ class serie : public video{
             temporadas=0;
         }
         //CONSTRUCTOR PARA PARÁMETROS DE POLIMORFISMO
-        serie(string _nombre, string _genero, int _duracion, int _id, int _temporadas, int _numEpisodios):
-        video(_id, _nombre,_duracion,_genero,0),temporadas(_temporadas),numEpisodios(_numEpisodios){}
+        serie(string _nombre, string _genero, int _duracion, 
+        int _id, int _temporadas, int _numEpisodios):
+        video(_id, _nombre,_duracion,_genero,0),
+        temporadas(_temporadas),numEpisodios(_numEpisodios){}
 
      
 
@@ -46,11 +48,9 @@ class serie : public video{
         Este método se mantiene como float, en caso de que se busque heredar
         a la clase EPISODIO...
         */
-        float califGeneral(){
-            float clasifGen=showClasificacion();
-            cout<<"Esta serie recibe una clasificación en base a los usuarios"
-            "de: "<<endl;
-            return clasifGen;
+        void califGeneral(){
+            cout<<"Esta película recibe una clasificación en base a los usuarios"
+            "de: "<< showClasificacion()<<endl;
         };
 
         //Se usa el concepto de polimorfismo para adaptar la información
