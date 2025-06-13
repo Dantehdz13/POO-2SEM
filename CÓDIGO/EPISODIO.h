@@ -23,34 +23,35 @@ class episodio : public serie{
     private:
         string titulo;
         int ubiTemporada;
+        int numEpisodios;
+        int temporadas;
 
     //------------------------------------------------------------------------
     //Métodos, constructores, getters y setters en público
     public:
         //Ambos constructores, parametrizado y por defecto...
-        episodio(string _nombre,string _genero,float _duracion,int _id,
-            int _temporadas,
-            int _numEpisodios,string _titulo,int _ubiTemporada)
-            :serie(_nombre, _genero, _duracion, _id,
-             _temporadas, _numEpisodios),titulo(_titulo),
-            ubiTemporada(_ubiTemporada){}
+        episodio(string nombre,string genero,float duracion,int id,
+            int temporadas,
+            int numEpisodios,string titulo,int ubiTemporada, float calificacion)
+            :serie(nombre, genero, duracion, id,
+             temporadas, numEpisodios,calificacion),titulo(titulo),
+            ubiTemporada(ubiTemporada){}
+
 
         //MÉTODOS.......................................
-        void califParticular(){
-            cout<<"Esta película recibe una clasificación en base a los usuarios"
-            "de: "<< showClasificacion()<<endl;
-        };
-
-        void showInfo(){
+        void showInfo() override{
                 //Concepto de polimorfismo: se heredan y modifican atributos
             //del método, pero ubicado en "serie"
             serie::showInfo();
             cout <<"Nombre del episodio: "<<titulo<<endl;
-            cout <<"Temporada: "<<ubiTemporada<<endl;
+            cout <<"Temporada en la que se encuentra: "<<ubiTemporada<<endl;
         };
 
-        void errorFunctionn(){
-           serie::errorFunctionn(); 
+        void errorFunctionn(int numError){
+            numError=47392;
+           serie::errorFunctionn();
+           cout<<"PROBLEMA AL CARGAR EL EPISODIO"<<endl;
+           cout<<"código de error: "<<numError<<endl;
         };
 
         //GETTERS PARA ACCEDER A LOS ATRIBUTOS PRIVADOS:.......................

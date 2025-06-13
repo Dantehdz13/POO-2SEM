@@ -26,18 +26,20 @@ class video{
         float duracion;
         string genero;
         int numError;
+        float calificacion;
 
     //------------------------------------------------------------------------
     //Métodos, constructores, getters y setters en público
     public:
 
         //constructor parametrizado
-        video(int id, string nombre, float duracion, string genero, int numError){
-            id=id;
-            nombre=nombre;
-            duracion=duracion;
-            genero=genero;
-            numError=numError;
+        video(int _id, string _nombre, float _duracion, string _genero, int _numError, float _calificacion){
+            id=_id;
+            nombre=_nombre;
+            duracion=_duracion;
+            genero=_genero;
+            numError=_numError;
+            calificacion=_calificacion;
         }
         //constructor por defecto
         video(){
@@ -46,6 +48,7 @@ class video{
             duracion=0;
             genero="";
             numError=0;
+            calificacion=0.00f;
         }
 
         //MÉTODOS .........................................
@@ -56,18 +59,9 @@ class video{
         y PELICULA, se van a poner como métodos virtuales, para que se puedan
         reescribir sin mayor problema en las clases mencionadas.
         */
-        virtual void showInfo(){
-
-        };
-        
-        virtual float showClasificacion(){
-
-        };
-        
-        virtual void errorFunctionn(){
-
-        };
-
+        virtual void showInfo(){}
+   
+        virtual void errorFunctionn()=0;
 };
 
 
